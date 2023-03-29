@@ -49,6 +49,23 @@ git commit -m "comment"
 git commit —amend -m “master2-Bu amend ile eklendi”
 ```
 
+### stash
+
+```bash
+'bu islem ile son committen sonra yapilan islemleri gecici olarak kaldirarak stashe ekler'
+git stash
+'stash listeleri'
+git stash list
+'stash listenin en üstünde yer alan değişiklik geri yüklenecek ve bu değişiklik listeden silinecek. '
+git stash pop 
+'istediğiniz değişikliği geri yükleyebilirsiniz. Ancak bu işlem sonrasında yüklediğiniz değişiklik listeden silinmeyecek.'
+git stash apply stash@{1}
+'degisikligi listeden silmek icin'
+git stash drop stash@{1}
+```
+
+
+
 ### revert
 
 ```bash
@@ -108,6 +125,7 @@ $ git branch -d <branch_name>
 ### checkout
 
 ```bash
+'Checkout islemini gerceklestirebilmek icin mevcut branchte olan degisikligi silmek ya da commit etmek gerekir'
 'varolan branche gitme'
 $ git checkout <branch_name>
 'yeni bir branch olusturup ona gecmek'
@@ -121,7 +139,20 @@ $ git checkout <commit_ID>
 ```bash
 'baska bir branchle birlestirmek istedigimizde'
 $ git merge <branch_name>
+'asagidaki bicimde ise merge islemi sonrasinda sizin bir commit olusturmanizi saglar'
+$ git merge --squash <branch_name>
+'Eger conflict ortaya cikarsa merge islemini iptal eder ancak conflictler hala vardir'
+$ git merge --abort
 ```
+
+### rebase
+
+```bash
+'commitleri dahil etmeden merge islemini yapiyor'
+$ git rebase <branch>
+```
+
+
 
 ### clone
 
